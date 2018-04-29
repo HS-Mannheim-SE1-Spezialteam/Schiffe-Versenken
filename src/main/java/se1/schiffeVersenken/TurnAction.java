@@ -7,11 +7,9 @@ import se1.schiffeVersenken.util.Vector2i;
 public class TurnAction {
 	
 	private boolean taken = false;
-	private final TileWorldImpl shotWorld;
 	private final TileWorld enemyWorld;
 	
-	public TurnAction(TileWorldImpl shotWorld, TileWorld enemyWorld) {
-		this.shotWorld = shotWorld;
+	public TurnAction(TileWorld enemyWorld) {
 		this.enemyWorld = enemyWorld;
 	}
 	
@@ -19,13 +17,12 @@ public class TurnAction {
 		return taken;
 	}
 	
-	public synchronized Tile shootTile(Vector2i position) {
+	public synchronized Tile shootTile(Vector2i position) throws InvalidActionException {
 		if (taken)
 			throw new InvalidActionException("Turn already taken");
 		
 		try {
-			Tile type = enemyWorld.getType(position);
-			shotWorld.setTile(position, type);
+			Tile type = enemyWorld.getTile(position);
 			taken = true;
 			return type;
 		} catch (IllegalArgumentException e) {

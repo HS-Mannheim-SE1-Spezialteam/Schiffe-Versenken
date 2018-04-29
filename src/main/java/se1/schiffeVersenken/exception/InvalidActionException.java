@@ -1,9 +1,6 @@
 package se1.schiffeVersenken.exception;
 
-/**
- * I'll prefer this to be an {@link Exception} instead of an {@link RuntimeException}, but I don't want ot make to too complicated.
- */
-public class InvalidActionException extends RuntimeException {
+public class InvalidActionException extends Exception {
 	
 	public InvalidActionException() {
 	}

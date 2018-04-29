@@ -1,41 +1,38 @@
 package se1.schiffeVersenken;
 
+import se1.schiffeVersenken.util.Grid2;
 import se1.schiffeVersenken.util.Vector2i;
 
 public class TileWorldImpl implements TileWorld {
 	
-	private final Tile[][] tiles;
+	private final Grid2<Tile> tiles;
 	
 	public TileWorldImpl() {
-		this(new Tile[GameSettings.SIZE_OF_PLAYFIELD][GameSettings.SIZE_OF_PLAYFIELD]);
+		this(Tile.UNDISCOVERED);
 	}
 	
-	public TileWorldImpl(TileWorld world) {
-		this(world.getTileArray());
-	}
-	
-	public TileWorldImpl(Tile[][] tiles) {
-		this.tiles = tiles;
+	public TileWorldImpl(Tile defaultTile) {
+		tiles = new Grid2<>(GameSettings.SIZE_OF_PLAYFIELD_VECTOR, defaultTile);
 	}
 	
 	@Override
-	public Tile[][] getTileArray() {
-		Tile[][] ret = new Tile[tiles.length][];
-		for (int i = 0; i < tiles.length; i++)
-			ret[i] = tiles[i].clone();
-		return ret;
+	public Tile getTile(Vector2i position) {
+		return tiles.get(position);
 	}
 	
-	@Override
-	public Tile getType(Vector2i position) {
-		if (!position.boundsCheck(Vector2i.NULL_VECTOR, GameSettings.SIZE_OF_PLAYFIELD_VECTOR))
-			throw new IllegalArgumentException("Vector out of bounds: " + position);
-		return tiles[position.x][position.y];
+	public void setTile(Vector2i position, Tile tile) {
+		tiles.set(position, tile);
 	}
-	
-	void setTile(Vector2i position, Tile tile) {
-		if (!position.boundsCheck(Vector2i.NULL_VECTOR, GameSettings.SIZE_OF_PLAYFIELD_VECTOR))
-			throw new IllegalArgumentException("Vector out of bounds: " + position);
-		tiles[position.x][position.y] = tile;
-	}
+
+//	public SecureTileWorld makeSecureTileWorld() {
+//		return new SecureTileWorld();
+//	}
+//
+//	private class SecureTileWorld implements TileWorld {
+//
+//		@Override
+//		public Tile getTile(Vector2i position) {
+//			return TileWorldImpl.this.getTile(position);
+//		}
+//	}
 }

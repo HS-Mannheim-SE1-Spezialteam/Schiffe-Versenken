@@ -4,7 +4,7 @@ package se1.schiffeVersenken.util;
  * A Vector Utility class using <code>int</code>.<br>
  * Every Method creates a new Object, which may not be the most efficient way but it'll be easier for Beginners working on this.
  */
-public class Vector2i {
+public final class Vector2i {
 	
 	public static final Vector2i NULL_VECTOR = new Vector2i(0, 0);
 	
@@ -43,6 +43,6 @@ public class Vector2i {
 	
 	@Override
 	public String toString() {
-		return "{x=" + x + ", y=" + y + "}";
+		return "{" + x + ", " + y + "}";
 	}
 }

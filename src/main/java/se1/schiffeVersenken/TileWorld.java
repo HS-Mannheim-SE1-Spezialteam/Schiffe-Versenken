@@ -4,9 +4,7 @@ import se1.schiffeVersenken.util.Vector2i;
 
 public interface TileWorld {
 	
-	Tile[][] getTileArray();
-	
-	Tile getType(Vector2i position);
+	Tile getTile(Vector2i position);
 	
 	enum Tile {
 		
