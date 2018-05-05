@@ -1,0 +1,3 @@
+[submodule "AI-Battle"]
+	path = AI-Battle
+	url = ./AI-Battle/
