@@ -1,4 +1,4 @@
-package se1.schiffeVersenken.exception;
+package se1.schiffeVersenken.interfaces.exception;
 
 public class InvalidActionException extends Exception {
 	

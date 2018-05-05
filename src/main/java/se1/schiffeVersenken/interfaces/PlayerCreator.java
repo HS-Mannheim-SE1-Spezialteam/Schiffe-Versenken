@@ -1,4 +1,4 @@
-package se1.schiffeVersenken;
+package se1.schiffeVersenken.interfaces;
 
 @FunctionalInterface
 public interface PlayerCreator {

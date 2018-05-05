@@ -1,6 +1,6 @@
-package se1.schiffeVersenken;
+package se1.schiffeVersenken.interfaces;
 
-import se1.schiffeVersenken.GameSettings.ShipBorderConditions;
+import se1.schiffeVersenken.interfaces.GameSettings.ShipBorderConditions;
 
 public class GameSettingsBuilder {
 	
