@@ -2,6 +2,15 @@ package se1.schiffeVersenken.interfaces;
 
 import se1.schiffeVersenken.interfaces.GameSettings.ShipBorderConditions;
 
+/**
+ * A Builder for {@link GameSettings}<br>
+ * <br>
+ * <ul>
+ * <li>{@link GameSettingsBuilder#setShipBorderConditions(ShipBorderConditions)} sets the {@link ShipBorderConditions}</li>
+ * <li>{@link GameSettingsBuilder#setNumOfShips(int, int)} sets the count of ships for any shipLength</li>
+ * </ul>
+ * The Method {@link GameSettingsBuilder#createGameSettings()} creates the {@link GameSettings}. <br>
+ */
 public class GameSettingsBuilder {
 	
 	private ShipBorderConditions shipBorderConditions;

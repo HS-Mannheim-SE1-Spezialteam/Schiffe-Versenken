@@ -4,6 +4,16 @@ import se1.schiffeVersenken.interfaces.util.Position;
 
 import java.util.Arrays;
 
+/**
+ * An Object representing the Settings for a Game.<br>
+ * You can create this Object with {@link GameSettingsBuilder}.<br>
+ * <br>
+ * You can query:
+ * <ul>
+ * <li>{@link GameSettings#getNumberOfShips(int)} get the number of {@link Ship Ships} for a certain size</li>
+ * <li>{@link GameSettings#getShipBorderConditions()} gets the {@link ShipBorderConditions} for the current Game</li>
+ * </ul>
+ */
 public class GameSettings {
 	
 	public static final int SIZE_OF_PLAYFIELD = 10;
@@ -29,24 +39,6 @@ public class GameSettings {
 	public int getNumberOfShips(int shipLength) {
 		return numberOfShips[shipLength - 1];
 	}
-
-//	//validate
-//	public ShipWorld validate(Ship[] ships) throws InvalidShipPlacementException {
-//		int[] count = new int[numberOfShips.length];
-//		for (Ship ship : ships)
-//			count[ship.getLength()]++;
-//		for (int i = 0; i < numberOfShips.length; i++)
-//			if (count[i] != numberOfShips[i])
-//				throw new InvalidShipPlacementException("Too many ships of length " + i);
-//
-//		ShipWorldImpl shipWorld = new ShipWorldImpl(ships);
-//		for (Ship ship : ships)
-//			for (Position vec : ship.getEmptySpacesSurrounding(this))
-//				if (shipWorld.getTile(vec) == Tile.SHIP)
-//					throw new InvalidShipPlacementException("The ship " + ship + " is too close to tile " + vec);
-//
-//		return shipWorld;
-//	}
 	
 	//enum
 	public enum ShipBorderConditions {

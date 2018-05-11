@@ -2,7 +2,9 @@ package se1.schiffeVersenken.interfaces.util;
 
 /**
  * A Vector Utility class using <code>int</code>.<br>
- * Every Method creates a new Object, which may not be the most efficient way but it'll be easier for Beginners working on this.
+ * Every Method creates a new Object, which may not be the most efficient way but it'll be easier for Beginners working on this.<br>
+ * <br>
+ * Any suggestions are welcome!
  */
 public final class Position {
 	

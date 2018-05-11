@@ -1,5 +1,8 @@
 package se1.schiffeVersenken.interfaces.exception;
 
+/**
+ * Thrown if someone wants to take a Turn but something is invalid.
+ */
 public class InvalidActionException extends Exception {
 	
 	public InvalidActionException() {

@@ -1,5 +1,6 @@
 package se1.schiffeVersenken.interfaces;
 
+import se1.schiffeVersenken.interfaces.GameSettings.ShipBorderConditions;
 import se1.schiffeVersenken.interfaces.util.Direction;
 import se1.schiffeVersenken.interfaces.util.Position;
 
@@ -7,8 +8,14 @@ import java.util.Arrays;
 
 /**
  * The {@link Ship} is our main "Entity" in the Game. <br>
- * It has a position inside a 10x10 grid world, a direction ({@link Direction#HORIZONTAL HORIZONTAL} or {@link Direction#VERTICAL VERTICAL}) and a length (at most 10).<br>
- * Use {@link Ship#getOccupiedSpaces()} to query all blocks of the world it is using.
+ * It has a position inside a 10x10 grid world, a direction ({@link Direction#HORIZONTAL HORIZONTAL}
+ * or {@link Direction#VERTICAL VERTICAL}) and a length (at most 10).<br>
+ * Methods:
+ * <ul>
+ * <li>{@link Ship#getHealth()} to get the current health of the ship</li>
+ * <li>{@link Ship#getOccupiedSpaces()} to query all blocks of the world it is using.</li>
+ * <li>{@link Ship#getEmptySpacesSurrounding(ShipBorderConditions)} to query all blocks around it which have to be water depending on {@link ShipBorderConditions}.</li>
+ * </ul>
  */
 public final class Ship {
 	
@@ -53,12 +60,21 @@ public final class Ship {
 		return health == 0;
 	}
 	
+	/**
+	 * gets all {@link Position Positions} which this ship occupies
+	 */
 	public Position[] getOccupiedSpaces() {
 		return occupiedSpaces;
 	}
 	
-	public Position[] getEmptySpacesSurrounding(GameSettings settings) {
-		switch (settings.getShipBorderConditions()) {
+	/**
+	 * gets all {@link Position Positions} which this ship requires to be water depending on the borderConditions
+	 *
+	 * @param borderConditions the {@link ShipBorderConditions} on how the {@link Ship Ships} are allowed to touch
+	 * @return an {@link Position}-Array containing all {@link Position Positions} which have to be {@link Tile#WATER}
+	 */
+	public Position[] getEmptySpacesSurrounding(ShipBorderConditions borderConditions) {
+		switch (borderConditions) {
 			case TOUCHING_ALLOWED:
 				return new Position[0];
 			case NO_DIRECT_TOUCH:

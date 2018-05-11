@@ -1,5 +1,8 @@
 package se1.schiffeVersenken.interfaces.util;
 
+/**
+ * A {@link Direction}, either {@link Direction#HORIZONTAL} or {@link Direction#VERTICAL}.
+ */
 public enum Direction {
 	
 	HORIZONTAL(new Position(0, 1)),
@@ -13,6 +16,9 @@ public enum Direction {
 		this.negative = positive.negate();
 	}
 	
+	/**
+	 * returns the other direction
+	 */
 	public Direction other() {
 		switch (this) {
 			case HORIZONTAL:
