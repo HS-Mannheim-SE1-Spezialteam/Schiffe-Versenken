@@ -1,6 +1,6 @@
 package se1.schiffeVersenken.interfaces;
 
-import se1.schiffeVersenken.interfaces.exception.ActionPositionOutOfBounds;
+import se1.schiffeVersenken.interfaces.exception.ActionPositionOutOfBoundsException;
 import se1.schiffeVersenken.interfaces.exception.AlreadyUsedActionException;
 import se1.schiffeVersenken.interfaces.exception.InvalidActionException;
 import se1.schiffeVersenken.interfaces.util.Position;
@@ -21,7 +21,7 @@ public abstract class TurnAction {
 	 *
 	 * @param position the {@link Position} to shoot
 	 * @return the {@link Tile} which was hit, one of {@link Tile#WATER}, {@link Tile#SHIP} or {@link Tile#SHIP_KILL}.
-	 * @throws InvalidActionException if the action is invalid, eg. {@link AlreadyUsedActionException}, {@link ActionPositionOutOfBounds} or others
+	 * @throws InvalidActionException if the action is invalid, eg. {@link AlreadyUsedActionException}, {@link ActionPositionOutOfBoundsException} or others
 	 */
 	public synchronized final Tile shootTile(Position position) throws InvalidActionException {
 		if (taken)

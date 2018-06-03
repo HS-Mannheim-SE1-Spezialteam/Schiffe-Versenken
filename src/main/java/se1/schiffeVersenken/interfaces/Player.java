@@ -15,7 +15,7 @@ import se1.schiffeVersenken.interfaces.util.Position;
  * <li>Repeating:<ul>
  * <li>{@link Player#takeTurn(TurnAction)} is called and you take your turn by calling {@link TurnAction#shootTile(Position)},
  * which returns the type of {@link Tile} you hit or throws an {@link InvalidActionException}</li>
- * <li>{@link Player#onEnemyShot(Position, Object)} tells you when the other player shoots one of your {@link Tile}
+ * <li>{@link Player#onEnemyShot(Position, Tile, Ship)} tells you when the other player shoots one of your {@link Tile}
  * and tells you the position and what was hit</li>
  * </ul></li>
  * <li>When {@link Player#gameOver(boolean)} is called the game is over to do eg. state saving</li>
@@ -46,9 +46,10 @@ public interface Player {
 	 * It will give you where he shot and what it hit.
 	 *
 	 * @param position the {@link Position} the other {@link Player} shot
-	 * @param target   what the other {@link Player} has hit, either a {@link Tile} or one of your {@link Ship Ships}
+	 * @param tile     the {@link Tile} the other {@link Player} has hit, either {@link Tile#WATER}, {@link Tile#SHIP} or {@link Tile#SHIP_KILL}
+	 * @param ship     the {@link Ship} the other {@link Player} has hit, may be <code>null</code> if no ship was damaged
 	 */
-	void onEnemyShot(Position position, Object target);
+	void onEnemyShot(Position position, Tile tile, Ship ship);
 	
 	/**
 	 * Tells you when the Game is over and whether you have won.
