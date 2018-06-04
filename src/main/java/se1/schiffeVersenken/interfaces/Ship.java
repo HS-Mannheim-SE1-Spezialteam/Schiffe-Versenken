@@ -1,10 +1,10 @@
 package se1.schiffeVersenken.interfaces;
 
+import java.util.Arrays;
+
 import se1.schiffeVersenken.interfaces.GameSettings.ShipBorderConditions;
 import se1.schiffeVersenken.interfaces.util.Direction;
 import se1.schiffeVersenken.interfaces.util.Position;
-
-import java.util.Arrays;
 
 /**
  * The {@link Ship} is our main "Entity" in the Game. <br>
@@ -18,7 +18,7 @@ import java.util.Arrays;
  * </ul>
  */
 public final class Ship {
-	
+
 	/**
 	 * the left upper corner of the ship
 	 */
@@ -60,6 +60,10 @@ public final class Ship {
 		return health == 0;
 	}
 	
+	public void takeHit() {
+		health--;
+	}
+
 	/**
 	 * gets all {@link Position Positions} which this ship occupies
 	 */
