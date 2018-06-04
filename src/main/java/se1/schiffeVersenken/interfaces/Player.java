@@ -1,7 +1,7 @@
 package se1.schiffeVersenken.interfaces;
 
-import se1.schiffeVersenken.interfaces.exception.InvalidActionException;
-import se1.schiffeVersenken.interfaces.exception.InvalidShipPlacementException;
+import se1.schiffeVersenken.interfaces.exception.action.InvalidActionException;
+import se1.schiffeVersenken.interfaces.exception.shipPlacement.InvalidShipPlacementException;
 import se1.schiffeVersenken.interfaces.util.Position;
 
 /**

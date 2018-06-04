@@ -1,8 +1,8 @@
 package se1.schiffeVersenken.interfaces;
 
-import se1.schiffeVersenken.interfaces.exception.ActionPositionOutOfBoundsException;
-import se1.schiffeVersenken.interfaces.exception.AlreadyUsedActionException;
-import se1.schiffeVersenken.interfaces.exception.InvalidActionException;
+import se1.schiffeVersenken.interfaces.exception.action.ActionPositionOutOfBoundsException;
+import se1.schiffeVersenken.interfaces.exception.action.AlreadyUsedActionException;
+import se1.schiffeVersenken.interfaces.exception.action.InvalidActionException;
 import se1.schiffeVersenken.interfaces.util.Position;
 
 /**

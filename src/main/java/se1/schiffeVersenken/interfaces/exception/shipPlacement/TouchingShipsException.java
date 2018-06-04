@@ -1,4 +1,4 @@
-package se1.schiffeVersenken.interfaces.exception;
+package se1.schiffeVersenken.interfaces.exception.shipPlacement;
 
 import se1.schiffeVersenken.interfaces.Ship;
 import se1.schiffeVersenken.interfaces.util.Position;

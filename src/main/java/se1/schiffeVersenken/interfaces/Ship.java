@@ -1,6 +1,7 @@
 package se1.schiffeVersenken.interfaces;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 import se1.schiffeVersenken.interfaces.GameSettings.ShipBorderConditions;
 import se1.schiffeVersenken.interfaces.util.Direction;
@@ -18,7 +19,7 @@ import se1.schiffeVersenken.interfaces.util.Position;
  * </ul>
  */
 public final class Ship {
-
+	
 	/**
 	 * the left upper corner of the ship
 	 */
@@ -63,7 +64,7 @@ public final class Ship {
 	public void takeHit() {
 		health--;
 	}
-
+	
 	/**
 	 * gets all {@link Position Positions} which this ship occupies
 	 */
@@ -99,6 +100,21 @@ public final class Ship {
 				return ret2;
 		}
 		throw new IllegalArgumentException();
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Ship)) return false;
+		Ship ship = (Ship) o;
+		return length == ship.length &&
+				Objects.equals(position, ship.position) &&
+				direction == ship.direction;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(position, direction, length);
 	}
 	
 	@Override

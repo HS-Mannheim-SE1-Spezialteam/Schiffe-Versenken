@@ -1,5 +1,7 @@
 package se1.schiffeVersenken.interfaces.util;
 
+import java.util.Objects;
+
 /**
  * A Vector Utility class using <code>int</code>.<br>
  * Every Method creates a new Object, which may not be the most efficient way but it'll be easier for Beginners working on this.<br>
@@ -41,6 +43,20 @@ public final class Position {
 	@SuppressWarnings("BooleanMethodIsAlwaysInverted")
 	public boolean boundsCheck(Position min, Position max) {
 		return min.x <= x && x < max.x && min.y <= y && y < max.y;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Position)) return false;
+		Position position = (Position) o;
+		return x == position.x &&
+				y == position.y;
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(x, y);
 	}
 	
 	@Override

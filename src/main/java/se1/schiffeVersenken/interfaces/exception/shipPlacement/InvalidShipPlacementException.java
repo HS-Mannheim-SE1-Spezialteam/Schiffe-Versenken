@@ -1,4 +1,4 @@
-package se1.schiffeVersenken.interfaces.exception;
+package se1.schiffeVersenken.interfaces.exception.shipPlacement;
 
 public class InvalidShipPlacementException extends Exception {
 	

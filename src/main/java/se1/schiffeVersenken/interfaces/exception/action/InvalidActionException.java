@@ -1,4 +1,4 @@
-package se1.schiffeVersenken.interfaces.exception;
+package se1.schiffeVersenken.interfaces.exception.action;
 
 /**
  * Thrown if someone wants to take a Turn but something is invalid.

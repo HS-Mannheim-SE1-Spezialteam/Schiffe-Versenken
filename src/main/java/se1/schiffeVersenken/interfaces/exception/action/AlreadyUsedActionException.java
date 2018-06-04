@@ -1,4 +1,4 @@
-package se1.schiffeVersenken.interfaces.exception;
+package se1.schiffeVersenken.interfaces.exception.action;
 
 public class AlreadyUsedActionException extends InvalidActionException {
 	

@@ -1,8 +1,8 @@
 package se1.schiffeVersenken.interfaces;
 
-import se1.schiffeVersenken.interfaces.exception.InvalidShipPlacementException;
-import se1.schiffeVersenken.interfaces.exception.OverlappingShipsException;
-import se1.schiffeVersenken.interfaces.exception.TouchingShipsException;
+import se1.schiffeVersenken.interfaces.exception.shipPlacement.InvalidShipPlacementException;
+import se1.schiffeVersenken.interfaces.exception.shipPlacement.OverlappingShipsException;
+import se1.schiffeVersenken.interfaces.exception.shipPlacement.TouchingShipsException;
 
 /**
  * Allows you to place down {@link Ship Ships} with {@link ShipPlacer#setShips(Ship[])}
