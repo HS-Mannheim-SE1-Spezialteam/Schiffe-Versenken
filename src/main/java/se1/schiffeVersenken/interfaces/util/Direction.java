@@ -5,8 +5,8 @@ package se1.schiffeVersenken.interfaces.util;
  */
 public enum Direction {
 	
-	HORIZONTAL(new Position(0, 1)),
-	VERTICAL(new Position(1, 0));
+	HORIZONTAL(new Position(1, 0)),
+	VERTICAL(new Position(0, 1));
 	
 	public final Position positive;
 	public final Position negative;
